@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Law Reader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── TOP BAR ── -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="emblem" aria-hidden="true">⚖</div>
+      <div class="site-title">
+        <span class="title-main">Law Reader</span>
+        <span class="title-sub">भारतीय कानून</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search articles, rights, amendments…" autocomplete="off" />
+        <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── LAYOUT ── -->
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div id="navMenu"></div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main" id="mainContent">
+      <div class="content-inner" id="contentInner">
+        <!-- Rendered by script.js -->
+      </div>
+    </main>
+
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-results-container" id="searchResults"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Data sourced from authoritative law texts and bare acts. For educational purposes only.</p>
+    <p>Legal framework of India &nbsp;·&nbsp; Contract law, rights and governance &nbsp;·&nbsp; Jai Hind 🇮🇳</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
