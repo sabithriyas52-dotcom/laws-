@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Contract Act, 1872 — Legal Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f5f0e8;
+    --cream: #faf7f2;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --red: #8b1a1a;
+    --red-light: #c0392b;
+    --border: #d4c9b0;
+    --muted: #6b5e4e;
+    --sidebar-bg: #1c1208;
+    --sidebar-text: #e8dcc8;
+    --sidebar-accent: #d4a017;
+    --highlight: #fff3cd;
+    --tag-bg: #2c1810;
+    --tag-text: #f0d080;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    overflow-y: auto;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    transition: transform .3s ease;
+  }
+
+  .sidebar-header {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid #3a2e1c;
+  }
+
+  .sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--sidebar-accent);
+    margin-bottom: 6px;
+  }
+
+  .sidebar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+
+  .sidebar-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #7a6a52;
+    margin-top: 4px;
+  }
+
+  .sidebar-search {
+    padding: 16px;
+    border-bottom: 1px solid #3a2e1c;
+  }
+
+  .sidebar-search input {
+    width: 100%;
+    background: #2a1e10;
+    border: 1px solid #4a3820;
+    color: var(--sidebar-text);
+    padding: 8px 12px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .sidebar-search input:focus { border-color: var(--sidebar-accent); }
+  .sidebar-search input::placeholder { color: #5a4a38; }
+
+  .nav-section {
+    padding: 14px 16px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #5a4a38;
+  }
+
+  .nav-item {
+    display: block;
+    padding: 8px 16px 8px 20px;
+    color: #b0a090;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: all .15s;
+  }
+
+  .nav-item:hover, .nav-item.active {
+    color: #fff;
+    border-left-color: var(--sidebar-accent);
+    background: rgba(212,160,23,.08);
+  }
+
+  .nav-item .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--sidebar-accent);
+    margin-right: 6px;
+  }
+
+  /* ── MAIN ── */
+  #main {
+    margin-left: 280px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── TOP BAR ── */
+  #topbar {
+    background: var(--parchment);
+    border-bottom: 2px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .tab-btn {
+    padding: 6px 18px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 14px;
+    border: 1px solid transparent;
+    background: none;
+    cursor: pointer;
+    color: var(--muted);
+    border-radius: 3px;
+    transition: all .2s;
+  }
+
+  .tab-btn.active {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .tab-btn:hover:not(.active) {
+    border-color: var(--border);
+    color: var(--ink);
+  }
+
+  /* ── HERO ── */
+  #hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 60px 60px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(212,160,23,.03) 40px,
+      rgba(212,160,23,.03) 41px
+    );
+  }
+
+  #hero::after {
+    content: 'ACT NO. 9 OF 1872';
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(212,160,23,.3);
+  }
+
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: #b0a090;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 36px;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #7a6a52;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── SEARCH BAR ── */
+  #search-section {
+    background: var(--parchment);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 60px;
+  }
+
+  .search-wrap {
+    position: relative;
+    max-width: 700px;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    padding: 14px 20px 14px 50px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 16px;
+    border: 2px solid var(--border);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .search-wrap input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184,134,11,.1);
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  #search-results-count {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ── CONTENT AREA ── */
+  #content {
+    padding: 40px 60px;
+    max-width: 1000px;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* ── SECTION CARDS ── */
+  .chapter-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .chapter-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .section-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow .2s;
+  }
+
+  .section-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 18px;
+    cursor: pointer;
+    background: var(--parchment);
+    border-bottom: 1px solid transparent;
+    transition: background .2s;
+  }
+
+  .section-head:hover { background: #ede8dc; }
+  .section-card.open .section-head { border-bottom-color: var(--border); }
+
+  .sec-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: var(--ink);
+    color: var(--gold-light);
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    flex: 1;
+  }
+
+  .sec-toggle {
+    font-size: 18px;
+    color: var(--muted);
+    transition: transform .2s;
+  }
+
+  .section-card.open .sec-toggle { transform: rotate(180deg); }
+
+  .section-body {
+    display: none;
+    padding: 20px 22px;
+  }
+
+  .section-card.open .section-body { display: block; }
+
+  .section-text {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #2a1e10;
+    margin-bottom: 14px;
+  }
+
+  .section-text strong {
+    color: var(--red);
+    font-weight: 600;
+  }
+
+  .illustration-block {
+    background: #fdf9f0;
+    border-left: 3px solid var(--gold);
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .illustration-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .illustration-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: .5px;
+  }
+
+  .mark { background: #fff176; padding: 0 2px; border-radius: 2px; }
+
+  /* ── CASES ── */
+  .case-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .case-head {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .case-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  .case-cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-light);
+    margin-top: 4px;
+  }
+
+  .case-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    background: rgba(212,160,23,.2);
+    color: var(--gold-light);
+    padding: 3px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .case-body {
+    display: none;
+    padding: 20px;
+  }
+
+  .case-card.open .case-body { display: block; }
+
+  .case-section {
+    margin-bottom: 14px;
+  }
+
+  .case-section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .case-section-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #2a1e10;
+  }
+
+  .ratio-box {
+    background: #1c1208;
+    color: #f0d080;
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+  /* ── GLOSSARY ── */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .gloss-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 6px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .gloss-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+
+  .gloss-section {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .gloss-def {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 20px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .tl-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: -26px;
+    top: 4px;
+    width: 12px; height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+  }
+
+  .tl-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .tl-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .tl-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 768px) {
+    #sidebar { transform: translateX(-100%); }
+    #sidebar.open { transform: translateX(0); }
+    #main { margin-left: 0; }
+    #hero, #content { padding-left: 24px; padding-right: 24px; }
+    #search-section { padding: 16px 24px; }
+    #topbar { padding: 0 24px; }
+    .hero-stats { gap: 20px; }
+  }
+
+  /* ── HAMBURGER ── */
+  #hamburger {
+    display: none;
+    position: fixed;
+    top: 14px; left: 14px;
+    z-index: 200;
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+
+  @media(max-width: 768px) { #hamburger { display: block; } }
+
+  .no-results {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 18px;
+  }
+
+  /* Scrollbar */
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-track { background: #0e0a04; }
+  #sidebar::-webkit-scrollbar-thumb { background: #3a2e1c; }
+</style>
+</head>
+<body>
+
+<button id="hamburger" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">Indian Law</div>
+    <div class="sidebar-title">Contract Act, 1872</div>
+    <div class="sidebar-year">Act No. 9 of 1872 · 25th April 1872</div>
+  </div>
+  <div class="sidebar-search">
+    <input type="text" id="sidebar-search" placeholder="Search sections…" oninput="sidebarFilter(this.value)">
+  </div>
+  <nav id="sidebar-nav"></nav>
+</aside>
+
+<!-- MAIN -->
+<div id="main">
+  <!-- HERO -->
+  <div id="hero">
+    <div class="hero-tag">Republic of India · Legal Reference</div>
+    <h1 class="hero-title">The Indian<br><em>Contract Act</em></h1>
+    <p class="hero-desc">A comprehensive reference to the foundational legislation governing contracts, agreements, bailment, agency, indemnity, and guarantee in India — enacted 25th April, 1872.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">Chapters</div></div>
+      <div class="stat"><div class="stat-num">238</div><div class="stat-label">Sections</div></div>
+      <div class="stat"><div class="stat-num">1872</div><div class="stat-label">Year Enacted</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Landmark Cases</div></div>
+    </div>
+  </div>
+
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <button class="tab-btn active" onclick="showTab('sections', this)">📜 Sections</button>
+    <button class="tab-btn" onclick="showTab('cases', this)">⚖️ Cases & Judgements</button>
+    <button class="tab-btn" onclick="showTab('glossary', this)">📖 Glossary</button>
+    <button class="tab-btn" onclick="showTab('history', this)">🕰 History</button>
+  </div>
+
+  <!-- SEARCH BAR -->
+  <div id="search-section">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="main-search" placeholder="Search sections, cases, terms…" oninput="mainSearch(this.value)">
+    </div>
+    <div id="search-results-count"></div>
+  </div>
+
+  <!-- CONTENT -->
+  <div id="content">
+
+    <!-- SECTIONS PANEL -->
+    <div id="panel-sections" class="panel active"></div>
+
+    <!-- CASES PANEL -->
+    <div id="panel-cases" class="panel">
+      <div style="margin-bottom:20px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Landmark Cases & Judgements</h2>
+        <p style="color:var(--muted);font-size:15px">Seminal judicial decisions interpreting the Indian Contract Act, 1872</p>
+      </div>
+      <div id="cases-container"></div>
+    </div>
+
+    <!-- GLOSSARY PANEL -->
+    <div id="panel-glossary" class="panel">
+      <div style="margin-bottom:20px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Legal Glossary</h2>
+        <p style="color:var(--muted);font-size:15px">Key terms and definitions under the Indian Contract Act</p>
+      </div>
+      <div class="glossary-grid" id="glossary-container"></div>
+    </div>
+
+    <!-- HISTORY PANEL -->
+    <div id="panel-history" class="panel">
+      <div style="margin-bottom:20px">
+        <h2 style="font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px">Legislative History</h2>
+        <p style="color:var(--muted);font-size:15px">Origins, amendments and evolution of the Indian Contract Act</p>
+      </div>
+      <div class="timeline" id="history-container"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════
+
+const CHAPTERS = [
+  {
+    id:"preliminary", num:"Preliminary", title:"Preliminary Provisions",
+    sections:[
+      { id:"s1", num:"1", title:"Short Title, Extent & Commencement",
+        text:"This Act may be called the <strong>Indian Contract Act, 1872</strong>. It extends to the whole of India and came into force on the first day of September, 1872. Nothing herein shall affect any statute, act, regulation, usage, custom of trade, or incident of any contract not inconsistent with the provisions of this Act.",
+        illustrations:[], tags:["commencement","extent","scope"] },
+      { id:"s2", num:"2", title:"Interpretation Clause",
+        text:"Key definitions: (a) A <strong>proposal</strong> is when one person signifies to another his willingness to do or abstain from doing anything with a view to obtaining assent. (b) When the person to whom the proposal is made signifies assent, the proposal becomes a <strong>promise</strong>. (c) The person making the proposal is the <strong>promisor</strong>; the person accepting is the <strong>promisee</strong>. (d) <strong>Consideration</strong> is something done, abstained from, or promised at the desire of the promisor. (e) Every promise and set of promises forming consideration for each other is an <strong>agreement</strong>. (f) <strong>Reciprocal promises</strong> form the consideration for each other. (g) An agreement not enforceable by law is <strong>void</strong>. (h) An agreement enforceable by law is a <strong>contract</strong>. (i) A <strong>voidable contract</strong> is enforceable at the option of one or more parties. (j) A contract ceases to be enforceable when it becomes void.",
+        illustrations:[], tags:["definitions","proposal","promise","contract","void","voidable","consideration"] },
+    ]
+  },
+  {
+    id:"ch1", num:"Chapter I", title:"Communication, Acceptance and Revocation of Proposals",
+    sections:[
+      { id:"s3", num:"3", title:"Communication, Acceptance and Revocation",
+        text:"The communication of proposals, the acceptance of proposals, and the revocation of proposals and acceptances are deemed to be made by any act or omission of the party by which he intends to communicate or which has the effect of communicating such proposal, acceptance, or revocation.",
+        illustrations:[], tags:["communication","proposal","acceptance","revocation"] },
+      { id:"s4", num:"4", title:"When Communication is Complete",
+        text:"The <strong>communication of a proposal</strong> is complete when it comes to the knowledge of the person to whom it is made. The <strong>communication of an acceptance</strong> is complete — as against the proposer, when it is put in a course of transmission so as to be out of the power of the acceptor; as against the acceptor, when it comes to the knowledge of the proposer. The <strong>communication of a revocation</strong> is complete — as against the person making it, when put into course of transmission; as against the person to whom made, when it comes to his knowledge.",
+        illustrations:["A proposes by letter to sell a house to B. Communication of proposal is complete when B receives the letter.","B accepts A's proposal by letter sent by post. Communication of acceptance is complete as against A when the letter is posted; as against B when the letter is received by A.","A revokes his proposal by telegram. The revocation is complete as against A when the telegram is despatched; as against B when B receives it."],
+        tags:["communication","complete","postal rule","acceptance"] },
+      { id:"s5", num:"5", title:"Revocation of Proposals and Acceptances",
+        text:"A proposal may be revoked at any time before the communication of its acceptance is complete as against the proposer, but not afterwards. An acceptance may be revoked at any time before the communication of the acceptance is complete as against the acceptor, but not afterwards.",
+        illustrations:["A proposes by letter to sell his house to B. B accepts by letter. A may revoke before or at the moment B posts the letter. B may revoke acceptance before the letter reaches A."],
+        tags:["revocation","proposal","acceptance","timeline"] },
+      { id:"s6", num:"6", title:"How Revocation is Made",
+        text:"A proposal is revoked: (1) by notice of revocation communicated to the other party; (2) by lapse of prescribed time or reasonable time without acceptance; (3) by failure of acceptor to fulfil a condition precedent; (4) by death or insanity of the proposer, if known to the acceptor before acceptance.",
+        illustrations:[], tags:["revocation","death","lapse","notice"] },
+      { id:"s7", num:"7", title:"Acceptance Must be Absolute",
+        text:"To convert a proposal into a promise, acceptance must: (1) be <strong>absolute and unqualified</strong>; (2) be expressed in usual and reasonable manner, unless the proposal prescribes the manner. If the proposal prescribes a manner and acceptance is not in that manner, the proposer may insist on the prescribed manner within a reasonable time; otherwise he accepts the acceptance.",
+        illustrations:[], tags:["acceptance","absolute","unqualified","manner"] },
+      { id:"s8", num:"8", title:"Acceptance by Performing Conditions",
+        text:"Performance of the conditions of a proposal, or acceptance of any consideration for a reciprocal promise offered with a proposal, is an acceptance of the proposal.",
+        illustrations:[], tags:["acceptance","performance","conduct"] },
+      { id:"s9", num:"9", title:"Express and Implied Promises",
+        text:"In so far as the proposal or acceptance is made in words, the promise is <strong>express</strong>. In so far as such proposal or acceptance is made otherwise than in words, the promise is <strong>implied</strong>.",
+        illustrations:[], tags:["express","implied","promise"] },
+    ]
+  },
+  {
+    id:"ch2", num:"Chapter II", title:"Contracts, Voidable Contracts and Void Agreements",
+    sections:[
+      { id:"s10", num:"10", title:"What Agreements are Contracts",
+        text:"All agreements are contracts if they are made by the <strong>free consent</strong> of parties <strong>competent to contract</strong>, for a <strong>lawful consideration</strong> and with a <strong>lawful object</strong>, and are not expressly declared to be void. Nothing herein affects any law requiring a contract to be in writing or in the presence of witnesses, or any law relating to registration of documents.",
+        illustrations:[], tags:["contract","essentials","free consent","lawful","competent"] },
+      { id:"s11", num:"11", title:"Competence to Contract",
+        text:"Every person is competent to contract who is: (1) of the <strong>age of majority</strong> according to the law to which he is subject; (2) of <strong>sound mind</strong>; and (3) not disqualified from contracting by any law to which he is subject.",
+        illustrations:[], tags:["competence","majority","sound mind","disqualification"] },
+      { id:"s12", num:"12", title:"Sound Mind for Contracting",
+        text:"A person is of sound mind for contracting if, at the time of making it, he is capable of <strong>understanding it</strong> and of forming a <strong>rational judgment</strong> as to its effect upon his interests. A person usually of unsound mind but occasionally of sound mind may contract during sound intervals. A person usually of sound mind but occasionally of unsound mind may not contract during unsound intervals.",
+        illustrations:["A patient in a lunatic asylum, who is at intervals of sound mind, may contract during those intervals.","A sane man, who is delirious from fever or too drunk to understand the terms, cannot contract whilst such delirium or drunkenness lasts."],
+        tags:["sound mind","capacity","unsound mind","insanity"] },
+      { id:"s13", num:"13", title:"Consent Defined",
+        text:"Two or more persons are said to consent when they agree upon the <strong>same thing in the same sense</strong> (consensus ad idem).",
+        illustrations:[], tags:["consent","consensus ad idem"] },
+      { id:"s14", num:"14", title:"Free Consent Defined",
+        text:"Consent is said to be free when it is not caused by: (1) <strong>coercion</strong> (s.15); (2) <strong>undue influence</strong> (s.16); (3) <strong>fraud</strong> (s.17); (4) <strong>misrepresentation</strong> (s.18); or (5) <strong>mistake</strong> (ss.20,21,22). Consent is so caused when it would not have been given but for the existence of such vitiating factors.",
+        illustrations:[], tags:["free consent","coercion","undue influence","fraud","misrepresentation","mistake"] },
+      { id:"s15", num:"15", title:"Coercion Defined",
+        text:"Coercion is the committing or threatening to commit any act forbidden by the Indian Penal Code, or the unlawful detaining or threatening to detain any property, to the prejudice of any person, with the intention of causing any person to enter into an agreement. It is immaterial whether the IPC is in force at the place where coercion is employed.",
+        illustrations:["A, on board an English ship, causes B to enter into an agreement by criminal intimidation. A has employed coercion even though his act is not an offence under English law."],
+        tags:["coercion","duress","IPC","threat"] },
+      { id:"s16", num:"16", title:"Undue Influence Defined",
+        text:"A contract is induced by undue influence where the relations between parties are such that one can dominate the will of the other and uses that position to obtain an <strong>unfair advantage</strong>. A person is deemed able to dominate another's will where he: (a) holds real or apparent authority, or stands in a fiduciary relation; or (b) contracts with a person whose mental capacity is affected by age, illness, or distress. Where an unconscionable transaction appears, the burden of proving absence of undue influence lies on the dominant party.",
+        illustrations:["A obtains by misuse of parental influence a bond from his son B for a greater amount than the sum due. A employs undue influence.","A, a man enfeebled by disease, is induced by his medical attendant B to pay an unreasonable sum. B employs undue influence.","A banker declining a loan except at an unusually high rate during monetary stringency is not undue influence — it is ordinary business."],
+        tags:["undue influence","fiduciary","dominant position","unconscionable"] },
+      { id:"s17", num:"17", title:"Fraud Defined",
+        text:"Fraud means any of: (1) suggestion of a fact not true by one who does not believe it to be true; (2) active concealment of a known fact; (3) a promise made without any intention of performing it; (4) any other act fitted to deceive; (5) any act or omission the law declares fraudulent. <em>Mere silence</em> is not fraud unless there is a duty to speak, or silence is equivalent to speech.",
+        illustrations:["A sells a horse he knows to be unsound. He says nothing — not fraud (no duty to speak).", "B is A's daughter just come of age — the relation creates a duty to disclose.", "A's silence in response to B's conditional assumption is equivalent to speech.","Two traders — A has private information of price changes; not bound to inform B."],
+        tags:["fraud","concealment","misrepresentation","duty to speak","silence"] },
+      { id:"s18", num:"18", title:"Misrepresentation Defined",
+        text:"Misrepresentation means: (1) positive assertion, not warranted by information, of something not true though believed to be true; (2) any breach of duty which, without intent to deceive, misleads another; (3) causing, however innocently, a party to make a mistake as to the substance of the subject matter of the agreement.",
+        illustrations:[], tags:["misrepresentation","innocent","assertion","breach of duty"] },
+      { id:"s19", num:"19", title:"Voidability — Absence of Free Consent",
+        text:"When consent is caused by coercion, fraud, or misrepresentation, the agreement is a <strong>voidable contract</strong> at the option of the party whose consent was so caused. The aggrieved party may also insist the contract be performed with him placed in the position he would have been had the representations been true. <em>Exception</em>: The contract is not voidable if consent was caused by misrepresentation or fraudulent silence, but the aggrieved party had means of discovering the truth with ordinary diligence.",
+        illustrations:["A fraudulently misrepresents the indigo production — B may avoid.","B examines accounts and buys knowing the truth — contract not voidable.","A fraudulently says estate is free from encumbrance — B may avoid or insist on mortgage being redeemed."],
+        tags:["voidable","misrepresentation","fraud","option","rescission"] },
+      { id:"s19a", num:"19A", title:"Power to Set Aside — Undue Influence",
+        text:"When consent is caused by undue influence, the agreement is voidable at the option of the party whose consent was so caused. Any such contract may be set aside absolutely, or if the party received any benefit, upon such terms and conditions as the Court may seem just.",
+        illustrations:["B obtains bond from A under threat of prosecuting A's son. Court may set the bond aside.","Money-lender induces agriculturist to execute bond for Rs.200 for advance of Rs.100. Court may set it aside, ordering repayment of Rs.100 with just interest."],
+        tags:["undue influence","set aside","court discretion","equitable"] },
+      { id:"s20", num:"20", title:"Bilateral Mistake of Fact — Void",
+        text:"Where both parties to an agreement are under a mistake as to a matter of fact essential to the agreement, the agreement is <strong>void</strong>. An erroneous opinion as to value is not deemed a mistake of fact.",
+        illustrations:["A agrees to sell cargo believed to be en route — ship had been cast away before bargain. Agreement void.","A agrees to buy a horse — the horse was dead at the time of the bargain. Agreement void.","Estate agreed to be sold — B was dead at the time. Agreement void."],
+        tags:["mutual mistake","bilateral","void","fact","essential"] },
+      { id:"s21", num:"21", title:"Mistake as to Law",
+        text:"A contract is not voidable because it was caused by a mistake as to any law in force in India. A mistake as to a law not in force in India has the same effect as a mistake of fact.",
+        illustrations:["A and B contract grounded on the erroneous belief that a debt is barred by the Law of Limitation. Contract not voidable."],
+        tags:["mistake of law","India","foreign law","not voidable"] },
+      { id:"s22", num:"22", title:"Unilateral Mistake of Fact",
+        text:"A contract is not voidable merely because it was caused by one party being under a mistake as to a matter of fact.",
+        illustrations:[], tags:["unilateral mistake","not voidable","one party"] },
+      { id:"s23", num:"23", title:"Lawful Consideration and Object",
+        text:"The consideration or object of an agreement is lawful unless: it is <strong>forbidden by law</strong>; would defeat the provisions of any law; is <strong>fraudulent</strong>; involves injury to person or property; or the Court regards it as <strong>immoral</strong> or <strong>opposed to public policy</strong>. Every agreement with an unlawful object or consideration is void.",
+        illustrations:["A agrees to sell his house to B — lawful considerations.","Agreement for division of gains acquired by fraud — void.","A promises to obtain public service employment for B in exchange for money — void; consideration unlawful.","A promises to drop prosecution for robbery in exchange for restoring stolen goods — void; object unlawful."],
+        tags:["lawful","object","consideration","public policy","immoral","forbidden"] },
+      { id:"s24", num:"24", title:"Partially Unlawful Consideration — Void",
+        text:"If any part of a single consideration for one or more objects, or any one or part of several considerations for a single object, is unlawful, the agreement is void.",
+        illustrations:["A promises to superintend legal manufacture of indigo and illegal traffic in other articles for Rs.10,000. Agreement void — object partly unlawful."],
+        tags:["unlawful","part","void","severability"] },
+      { id:"s25", num:"25", title:"Agreement Without Consideration — Exceptions",
+        text:"An agreement without consideration is void unless: (1) it is in writing, registered, and made on account of <strong>natural love and affection</strong> between near relatives; (2) it is a promise to compensate for something already voluntarily done or legally compellable; or (3) it is a written, signed promise to pay a <strong>time-barred debt</strong>. Inadequate consideration does not void an agreement where consent was freely given, but may be taken into account by a Court.",
+        illustrations:["A promises Rs.1,000 for no consideration — void.","A puts promise to son B in writing and registers it — contract.","A finds B's purse and returns it; B promises Rs.50 — contract.","A supports B's infant son; B promises to pay expenses — contract.","Time-barred debt of Rs.1,000; A signs written promise to pay Rs.500 — contract."],
+        tags:["consideration","natural love","time-barred debt","writing","registration"] },
+      { id:"s26", num:"26", title:"Restraint of Marriage — Void",
+        text:"Every agreement in restraint of the marriage of any person, other than a minor, is void.",
+        illustrations:[], tags:["restraint","marriage","void","public policy"] },
+      { id:"s27", num:"27", title:"Restraint of Trade — Void",
+        text:"Every agreement by which any one is restrained from exercising a lawful profession, trade, or business is, to that extent, void. <em>Exception</em>: One who sells the good-will of a business may agree with the buyer to refrain from carrying on a similar business within specified reasonable local limits.",
+        illustrations:[], tags:["restraint of trade","profession","goodwill","void","exception"] },
+      { id:"s28", num:"28", title:"Restraint of Legal Proceedings — Void",
+        text:"Every agreement that restricts a party from enforcing his rights through usual legal proceedings, or that limits the time for enforcing such rights, is void to that extent. <em>Exceptions</em>: (1) Contract to refer disputes to arbitration is valid; (2) Contract to refer existing questions to arbitration is valid; (3) Guarantee agreements of banks or financial institutions stipulating extinguishment of liability after a specified period (not less than one year) are valid.",
+        illustrations:[], tags:["restraint","legal proceedings","arbitration","void","limitation"] },
+      { id:"s29", num:"29", title:"Agreements Void for Uncertainty",
+        text:"Agreements, the meaning of which is not certain or capable of being made certain, are void.",
+        illustrations:["'One hundred tons of oil' with nothing to show what kind — void for uncertainty.","'One hundred tons of oil of specified description' — not uncertain.","A dealer in coconut-oil only agrees to sell 'one hundred tons of oil' — nature of trade provides certainty.","'All the grain in my granary at Ramnagar' — not uncertain.","Price to be fixed by C — capable of being made certain; not void.","'My white horse for Rs.500 or Rs.1,000' — uncertain; void."],
+        tags:["uncertainty","void","certain","incapable","meaning"] },
+      { id:"s30", num:"30", title:"Wagering Agreements — Void",
+        text:"Agreements by way of wager are void. No suit shall lie to recover anything alleged to be won on any wager, or entrusted to abide the result of any uncertain event. <em>Exception</em>: Subscriptions for horse-race prizes of Rs.500 or upwards awarded to the winner are not unlawful. Section 294A IPC is not affected.",
+        illustrations:[], tags:["wager","void","gambling","horse-racing","exception"] },
+    ]
+  },
+  {
+    id:"ch3", num:"Chapter III", title:"Contingent Contracts",
+    sections:[
+      { id:"s31", num:"31", title:"Contingent Contract Defined",
+        text:"A contingent contract is a contract to do or not to do something, if some event, <strong>collateral to such contract</strong>, does or does not happen.",
+        illustrations:["A contracts to pay B Rs.10,000 if B's house is burnt. This is a contingent contract."],
+        tags:["contingent","collateral","event","defined"] },
+      { id:"s32", num:"32", title:"Contracts Contingent on Event Happening",
+        text:"Contingent contracts to do or not do anything if an uncertain future event happens cannot be enforced unless and until that event has happened. If the event becomes impossible, such contracts become void.",
+        illustrations:["A contracts to buy B's horse if A survives C — cannot be enforced until C dies.","A contracts to pay B when B marries C. C dies without marrying B — contract becomes void."],
+        tags:["contingent","event","happening","impossible","void"] },
+      { id:"s33", num:"33", title:"Contracts Contingent on Event Not Happening",
+        text:"Contingent contracts to do or not do anything if an uncertain future event does not happen can be enforced when the happening of that event becomes impossible, and not before.",
+        illustrations:["A agrees to pay B if a ship does not return. The ship is sunk. Contract can be enforced."],
+        tags:["contingent","not happening","impossible","enforce"] },
+      { id:"s34", num:"34", title:"Future Conduct of Living Person",
+        text:"If the future event on which a contract is contingent is the way in which a person will act at an unspecified time, the event shall be considered impossible when such person does anything which renders it impossible that he should so act within any definite time or otherwise than under further contingencies.",
+        illustrations:["A agrees to pay B if B marries C. C marries D. Marriage of B to C is now considered impossible."],
+        tags:["contingent","living person","conduct","impossible"] },
+      { id:"s35", num:"35", title:"Contingent Contracts with Fixed Time",
+        text:"Contingent contracts on a specified event happening within a fixed time become void if the event does not happen by expiry of time, or becomes impossible before then. Contingent contracts on a specified event not happening within a fixed time may be enforced when time expires without the event, or when it becomes certain the event will not happen.",
+        illustrations:["A promises to pay if a ship returns within a year. If burnt within year — void; if returned within year — enforceable."],
+        tags:["contingent","fixed time","void","enforce","specified event"] },
+      { id:"s36", num:"36", title:"Contingent on Impossible Events — Void",
+        text:"Contingent agreements to do or not do anything if an impossible event happens are void, whether or not the impossibility is known to the parties at the time of making.",
+        illustrations:["A agrees to pay B Rs.1,000 if two straight lines enclose a space — void.","A agrees to pay B Rs.1,000 if B marries A's daughter C who was dead at the time — void."],
+        tags:["contingent","impossible event","void","known","unknown"] },
+    ]
+  },
+  {
+    id:"ch4", num:"Chapter IV", title:"Performance of Contracts",
+    sections:[
+      { id:"s37", num:"37", title:"Obligation to Perform",
+        text:"Parties to a contract must either perform, or offer to perform, their respective promises, unless performance is dispensed with or excused under this Act or any other law. Promises bind the representatives of promisors in case of death before performance, unless a contrary intention appears.",
+        illustrations:["A promises to deliver goods; dies before delivery — A's representatives must deliver.","A promises to paint a picture for B by a certain day; A dies — contract cannot be enforced by either party."],
+        tags:["performance","obligation","death","representatives"] },
+      { id:"s38", num:"38", title:"Effect of Refusal to Accept Performance",
+        text:"Where a promisor has made an offer of performance and it has not been accepted, the promisor is not responsible for non-performance nor does he lose his rights. Every such offer must: (1) be unconditional; (2) be made at a proper time and place; (3) if delivery, give the promisee opportunity to inspect the thing offered.",
+        illustrations:[], tags:["offer","performance","tender","unconditional","inspection"] },
+      { id:"s39", num:"39", title:"Effect of Refusal to Perform Wholly",
+        text:"When a party has refused to perform, or disabled himself from performing, his promise in its entirety, the promisee may put an end to the contract, unless he has signified by words or conduct his acquiescence in its continuance.",
+        illustrations:["A, a singer, wilfully absents herself on the sixth night — B (manager) may put an end to contract.","A absents herself; with B's assent A sings on the seventh night — B has acquiesced and cannot now end the contract, but may claim compensation for the sixth night."],
+        tags:["refusal","performance","repudiation","acquiescence","rescission"] },
+      { id:"s40", num:"40", title:"Who Must Perform",
+        text:"If it appears from the nature of the case that the parties intended the promise to be performed by the promisor himself, it must be so performed. Otherwise the promisor or his representatives may employ a competent person to perform.",
+        illustrations:["A promises to pay B — performance may be by A or another.","A promises to paint a picture — must perform personally."],
+        tags:["performance","personal","representative","competent person"] },
+      { id:"s41", num:"41", title:"Accepting Performance from Third Person",
+        text:"When a promisee accepts performance of the promise from a third person, he cannot afterwards enforce it against the promisor.",
+        illustrations:[], tags:["third party","performance","acceptance","discharge"] },
+      { id:"s43", num:"43", title:"Joint Promisors — Compel Performance",
+        text:"When two or more persons make a joint promise, the promisee may, in the absence of express agreement, compel any one or more of such joint promisors to perform the whole promise. Each promisor may compel equal contribution from the others. Loss from default in contribution is shared equally by remaining joint promisors.",
+        illustrations:["A, B, C jointly promise to pay D Rs.3,000 — D may compel any one to pay the whole.","C compelled to pay whole — A is insolvent with assets sufficient for half his debts — C receives Rs.500 from A's estate and Rs.1,250 from B."],
+        tags:["joint promisors","contribution","compel","liability","contribution"] },
+      { id:"s55", num:"55", title:"Failure to Perform at Fixed Time",
+        text:"When a party promises to do something at or before a specified time and fails, the contract becomes voidable at the promisee's option if time was of the essence. If time was not of the essence, the contract does not become voidable, but the promisee is entitled to compensation for any loss. If the promisee accepts late performance, he cannot claim compensation for late performance unless, at the time of acceptance, he gives notice of intention to do so.",
+        illustrations:[], tags:["time","essence","failure","voidable","compensation"] },
+      { id:"s56", num:"56", title:"Agreement to Do Impossible Act",
+        text:"An agreement to do an act impossible in itself is void. A contract to do an act which after making the contract becomes impossible or, by reason of some event the promisor could not prevent, unlawful, becomes void when the act becomes impossible or unlawful. Where one person promised to do something he knew (or could with diligence have known) to be impossible, and the promisee did not know, the promisor must make compensation for loss through non-performance.",
+        illustrations:["A agrees to discover treasure by magic — void.","A and B contract to marry; A goes mad — becomes void.","A contracts to take cargo to a foreign port; war declared against that country — void.","A contracts to act at a theatre; on several occasions too ill — those occasions become void."],
+        tags:["impossibility","void","frustration","unlawful","subsequent impossibility"] },
+      { id:"s62", num:"62", title:"Novation, Rescission and Alteration",
+        text:"If parties to a contract agree to substitute a new contract for it, or to rescind or alter it, the original contract need not be performed.",
+        illustrations:["A owes B under a contract; A, B and C agree that C replaces A as debtor — old debt of A extinguished.","A owes B Rs.10,000; A gives B mortgage for Rs.5,000 in place — new contract extinguishes old."],
+        tags:["novation","rescission","alteration","substitution","accord"] },
+      { id:"s73", num:"73", title:"Compensation for Breach",
+        text:"When a contract has been broken, the party who suffers is entitled to receive from the party in breach compensation for any loss or damage: (a) which naturally arose in the usual course of things from the breach; or (b) which the parties knew, when they made the contract, to be likely to result from breach. No compensation for remote and indirect loss.",
+        illustrations:["A fails to deliver saltpetre — B entitled to difference between contract price and market price.","B wrongfully refuses iron — must pay difference between contract price and cost of delivery.","Common carrier delays delivery of machine causing loss of Government contract — entitled to average profit during delay, NOT the Government contract loss."],
+        tags:["damages","breach","compensation","remoteness","Hadley v Baxendale","natural consequence"] },
+      { id:"s74", num:"74", title:"Compensation Where Penalty Stipulated",
+        text:"When a contract has been broken, if a sum is named in the contract as the amount to be paid for breach, or if the contract contains any stipulation by way of penalty, the party complaining of breach is entitled to receive reasonable compensation not exceeding the amount so named or penalty stipulated, whether or not actual damage is proved. A stipulation for increased interest from date of default may be a penalty clause.",
+        illustrations:["A contracts to pay Rs.1,000 if he fails to pay Rs.500 — B may recover reasonable compensation not exceeding Rs.1,000.","A contracts not to practise as surgeon in Calcutta on penalty of Rs.5,000 — B entitled to reasonable compensation not exceeding Rs.5,000.","Interest at 75% from date of default — stipulation by way of penalty — B only entitled to reasonable compensation."],
+        tags:["penalty","liquidated damages","stipulation","reasonable","breach"] },
+    ]
+  },
+  {
+    id:"ch5", num:"Chapter V", title:"Quasi-Contractual Relations",
+    sections:[
+      { id:"s68", num:"68", title:"Necessaries Supplied to Incapable Person",
+        text:"If a person incapable of contracting, or any one he is legally bound to support, is supplied with necessaries suited to his condition in life by another person, the supplier is entitled to be reimbursed from the property of such incapable person.",
+        illustrations:["A supplies lunatic B with necessaries — A entitled to reimbursement from B's property.","A supplies wife and children of lunatic B with necessaries — A entitled from B's property."],
+        tags:["quasi-contract","necessaries","incapable","restitution","minor"] },
+      { id:"s69", num:"69", title:"Reimbursement of Person Paying Another's Debt",
+        text:"A person who is interested in the payment of money which another is bound by law to pay, and who therefore pays it, is entitled to be reimbursed by the other.",
+        illustrations:["B holds land on lease from A; A's revenue in arrear; land to be sold by Government which would annul B's lease. B pays Government — A bound to reimburse B."],
+        tags:["reimbursement","payment","interest","quasi-contract","liability"] },
+      { id:"s70", num:"70", title:"Benefit of Non-Gratuitous Act",
+        text:"Where a person lawfully does anything for another or delivers anything to him, not intending to do so gratuitously, and such other person enjoys the benefit, the latter is bound to make compensation or restore the thing.",
+        illustrations:["A tradesman leaves goods at B's house by mistake — B treats them as his own — bound to pay A.","A saves B's property from fire but intends to act gratuitously — not entitled to compensation."],
+        tags:["quasi-contract","unjust enrichment","benefit","gratuitous","restitution"] },
+      { id:"s71", num:"71", title:"Responsibility of Finder of Goods",
+        text:"A person who finds goods belonging to another and takes them into his custody is subject to the same responsibility as a bailee.",
+        illustrations:[], tags:["finder","goods","bailee","responsibility"] },
+      { id:"s72", num:"72", title:"Money Paid by Mistake or Under Coercion",
+        text:"A person to whom money has been paid, or anything delivered, by mistake or under coercion, must repay or return it.",
+        illustrations:["A and B jointly owe C Rs.100; A pays; B, not knowing, pays again — C bound to repay B.","Railway refuses to deliver goods except upon illegal charge; consignee pays — entitled to recover the excess."],
+        tags:["mistake","coercion","repay","return","quasi-contract","unjust enrichment"] },
+    ]
+  },
+  {
+    id:"ch6", num:"Chapter VI", title:"Consequences of Breach of Contract",
+    sections:[
+      { id:"s75", num:"75", title:"Party Rightfully Rescinding — Entitled to Compensation",
+        text:"A person who rightfully rescinds a contract is entitled to compensation for any damage sustained through the non-fulfilment of the contract.",
+        illustrations:["A (singer) wilfully absents on sixth night; B (manager) rescinds — B entitled to compensation for damage from non-fulfilment."],
+        tags:["rescission","compensation","rightfully","breach","damages"] },
+    ]
+  },
+  {
+    id:"ch8", num:"Chapter VIII", title:"Indemnity and Guarantee",
+    sections:[
+      { id:"s124", num:"124", title:"Contract of Indemnity Defined",
+        text:"A contract by which one party promises to save the other from loss caused by the conduct of the promisor himself, or by the conduct of any other person, is called a contract of <strong>indemnity</strong>.",
+        illustrations:["A contracts to indemnify B against proceedings C may take against B in respect of Rs.200 — a contract of indemnity."],
+        tags:["indemnity","promise","loss","third party","promisor"] },
+      { id:"s125", num:"125", title:"Rights of Indemnity-Holder When Sued",
+        text:"The promisee in a contract of indemnity, acting within the scope of his authority, is entitled to recover from the promisor: (1) all damages compelled to be paid; (2) all costs of suit if he did not contravene the promisor's orders and acted prudently, or if the promisor authorized the suit; (3) all sums paid in compromise if not contrary to promisor's orders and it was prudent to compromise, or the promisor authorized it.",
+        illustrations:[], tags:["indemnity","damages","costs","compromise","authority"] },
+      { id:"s126", num:"126", title:"Contract of Guarantee Defined",
+        text:"A contract of guarantee is a contract to perform the promise or discharge the liability of a third person in case of his default. The person giving guarantee is the <strong>surety</strong>; the person in respect of whose default it is given is the <strong>principal debtor</strong>; the person to whom it is given is the <strong>creditor</strong>. A guarantee may be oral or written.",
+        illustrations:[], tags:["guarantee","surety","principal debtor","creditor","oral","written"] },
+      { id:"s127", num:"127", title:"Consideration for Guarantee",
+        text:"Anything done, or any promise made, for the benefit of the principal debtor may be a sufficient consideration to the surety for giving the guarantee.",
+        illustrations:["B requests goods on credit; A agrees if C guarantees — C's promise in consideration of A's promise to deliver. Sufficient consideration.","A forbears to sue B for a year at C's request; C promises to pay in default — sufficient consideration.","C promises to pay for goods already sold without consideration — agreement void."],
+        tags:["consideration","guarantee","surety","benefit","past consideration"] },
+      { id:"s128", num:"128", title:"Surety's Liability",
+        text:"The liability of the surety is <strong>co-extensive</strong> with that of the principal debtor, unless otherwise provided by the contract.",
+        illustrations:["A guarantees payment of a bill of exchange by C. Bill dishonoured — A liable not only for the bill amount but also for interest and charges."],
+        tags:["surety","liability","co-extensive","principal debtor"] },
+      { id:"s129", num:"129", title:"Continuing Guarantee",
+        text:"A guarantee which extends to a series of transactions is called a continuing guarantee.",
+        illustrations:["A promises to be responsible for C's collection of rents to the amount of Rs.5,000 — a continuing guarantee.","A guarantees tea supplies to C up to £100 — a continuing guarantee.","A guarantees payment for five sacks of flour — not a continuing guarantee."],
+        tags:["continuing guarantee","series","transactions"] },
+      { id:"s133", num:"133", title:"Discharge by Variance in Contract",
+        text:"Any variance, made without the surety's consent, in the terms of the contract between the principal debtor and the creditor, discharges the surety as to transactions subsequent to the variance.",
+        illustrations:["A becomes surety for B as bank manager; B and C (without A's consent) raise B's salary and liability — A discharged.","C agrees to appoint B as clerk; without A's knowledge B is to be paid by commission instead of salary — A not liable for subsequent misconduct."],
+        tags:["discharge","variance","surety","consent","subsequent transactions"] },
+      { id:"s141", num:"141", title:"Surety's Right to Creditor's Securities",
+        text:"A surety is entitled to the benefit of every security which the creditor has against the principal debtor at the time when the contract of suretyship is entered into, whether or not the surety knows of such security. If the creditor loses or parts with such security without the surety's consent, the surety is discharged to the extent of the value of the security.",
+        illustrations:["C cancels mortgage on B's furniture; B becomes insolvent — A (surety) is discharged to the extent of the furniture value."],
+        tags:["surety","securities","benefit","discharge","creditor"] },
+    ]
+  },
+  {
+    id:"ch9", num:"Chapter IX", title:"Bailment",
+    sections:[
+      { id:"s148", num:"148", title:"Bailment, Bailor and Bailee Defined",
+        text:"A bailment is the delivery of goods by one person to another for some purpose, upon a contract that they shall, when the purpose is accomplished, be returned or otherwise disposed of according to the directions of the person delivering them. The person delivering is the <strong>bailor</strong>. The person to whom they are delivered is the <strong>bailee</strong>.",
+        illustrations:[], tags:["bailment","bailor","bailee","delivery","purpose"] },
+      { id:"s151", num:"151", title:"Care to be Taken by Bailee",
+        text:"In all cases of bailment, the bailee is bound to take as much care of the goods bailed as a man of ordinary prudence would, under similar circumstances, take of his own goods of the same bulk, quality, and value.",
+        illustrations:[], tags:["bailee","care","ordinary prudence","standard","duty"] },
+      { id:"s170", num:"170", title:"Bailee's Particular Lien",
+        text:"Where the bailee has, in accordance with the purpose of the bailment, rendered any service involving the exercise of labour or skill in respect of the goods bailed, he has, in the absence of a contract to the contrary, a right to retain such goods until he receives due remuneration for the services rendered.",
+        illustrations:["A delivers a rough diamond to B a jeweller to be cut and polished — B entitled to retain until paid.","A gives cloth to B a tailor; B promises delivery with three months' credit — B not entitled to retain."],
+        tags:["lien","particular lien","bailee","remuneration","retain"] },
+      { id:"s172", num:"172", title:"Pledge, Pawnor and Pawnee Defined",
+        text:"The bailment of goods as security for payment of a debt or performance of a promise is called a <strong>pledge</strong>. The bailor in this case is the <strong>pawnor</strong>. The bailee is the <strong>pawnee</strong>.",
+        illustrations:[], tags:["pledge","pawnor","pawnee","security","debt"] },
+      { id:"s176", num:"176", title:"Pawnee's Right on Default",
+        text:"If the pawnor makes default in payment or performance, the pawnee may bring a suit and retain the goods as collateral security, or may sell the thing pledged on giving the pawnor reasonable notice of sale. If proceeds are less than the amount due, the pawnor remains liable for the balance. If proceeds exceed the amount, the pawnee shall pay over the surplus to the pawnor.",
+        illustrations:[], tags:["pawnee","default","sale","notice","surplus","balance"] },
+    ]
+  },
+  {
+    id:"ch10", num:"Chapter X", title:"Agency",
+    sections:[
+      { id:"s182", num:"182", title:"Agent and Principal Defined",
+        text:"An <strong>agent</strong> is a person employed to do any act for another, or to represent another in dealings with third persons. The person for whom such act is done, or who is so represented, is called the <strong>principal</strong>.",
+        illustrations:[], tags:["agent","principal","defined","representation","act"] },
+      { id:"s188", num:"188", title:"Extent of Agent's Authority",
+        text:"An agent having authority to do an act has authority to do every lawful thing which is necessary in order to do such act. An agent having authority to carry on a business has authority to do every lawful thing necessary for, or usually done in the course of, conducting such business.",
+        illustrations:["A employs B to recover a debt in Bombay — B may adopt any legal process necessary.","B is A's agent to carry on a ship-building business — B may purchase timber, hire workmen."],
+        tags:["authority","implied","agent","extent","business","necessary"] },
+      { id:"s196", num:"196", title:"Ratification of Unauthorised Acts",
+        text:"Where acts are done by one person on behalf of another without his knowledge or authority, he may elect to ratify or disown such acts. If he ratifies them, the same effects will follow as if they had been performed by his authority.",
+        illustrations:["A, without authority, buys goods for B; B afterwards sells them — implies ratification.","A, without B's authority, lends B's money to C; B accepts interest — implies ratification."],
+        tags:["ratification","unauthorised","elect","retrospective","authority"] },
+      { id:"s201", num:"201", title:"Termination of Agency",
+        text:"Agency is terminated by: the principal revoking authority; the agent renouncing the business; the business of the agency being completed; either the principal or agent dying or becoming of unsound mind; or the principal being adjudicated insolvent.",
+        illustrations:[], tags:["termination","agency","revocation","death","insanity","insolvency"] },
+      { id:"s226", num:"226", title:"Enforcement of Agent's Contracts",
+        text:"Contracts entered into through an agent, and obligations arising from acts done by an agent, may be enforced in the same manner and will have the same legal consequences as if the contracts had been entered into and the acts done by the principal in person.",
+        illustrations:["A buys goods knowing B is an agent — B's principal is entitled to payment; A cannot set-off a debt due from B.","B, as A's agent, receives payment from C — C is discharged of his obligation to A."],
+        tags:["agent","contracts","enforcement","principal","third parties"] },
+      { id:"s237", num:"237", title:"Principal Bound by Agent's Apparent Authority",
+        text:"When an agent has, without authority, done acts or incurred obligations to third persons on behalf of his principal, the principal is bound by such acts or obligations if he has by his words or conduct induced such third persons to believe that such acts and obligations were within the scope of the agent's authority.",
+        illustrations:["A consigns goods to B with instructions not to sell below a fixed price — C, ignorant of B's instructions, buys at a lower price — A is bound.","A entrusts B with negotiable instruments endorsed in blank — B sells to C in violation of private orders — sale is good."],
+        tags:["apparent authority","estoppel","holding out","principal","bound"] },
+    ]
+  },
+];
+
+// ── CASES DATA ──
+const CASES = [
+  {
+    name:"Mohori Bibee v. Dharmodas Ghose",
+    cite:"(1903) 30 IA 114 (PC)",
+    section:"Section 11",
+    court:"Privy Council",
+    year:"1903",
+    facts:"A minor (Dharmodas Ghose) mortgaged his property to a money-lender (Brahmo Dutt) to secure a loan. Brahmo Dutt's attorney was aware of the minor's minority. After Brahmo Dutt's death, his executors sued for repayment and enforcement of the mortgage.",
+    held:"A contract entered into by a minor is void ab initio (not merely voidable). A minor lacks capacity to contract under Section 11. No restitution was ordered under Section 64 as that provision only applies to voidable contracts.",
+    ratio:"A minor's agreement is void and confers no rights or obligations on either party. Sections 10 and 11 together lay down that minority is an absolute disqualification. The court will not enforce such a contract nor require the minor to restore the benefit received.",
+    tags:["Minor","Section 11","Void","Capacity"]
+  },
+  {
+    name:"Carlill v. Carbolic Smoke Ball Co.",
+    cite:"[1893] 1 QB 256",
+    section:"Sections 2, 7, 8",
+    court:"Court of Appeal, England",
+    year:"1893",
+    facts:"Carbolic Smoke Ball Co. published an advertisement offering £100 to anyone who used their smoke ball as directed and still contracted influenza. Mrs. Carlill used the smoke ball and contracted influenza. She sued for the reward.",
+    held:"The advertisement was a valid offer to the world at large. Using the smoke ball as directed constituted acceptance by conduct. The contract was supported by consideration (using the ball as directed and suffering the inconvenience). Notification of acceptance was not required.",
+    ratio:"An offer can be made to the world. Acceptance by conduct is valid. A unilateral offer requires no prior notification of acceptance — performance of the stipulated conditions is sufficient.",
+    tags:["Offer","Acceptance","Unilateral Contract","Consideration","Conduct"]
+  },
+  {
+    name:"Balfour v. Balfour",
+    cite:"[1919] 2 KB 571",
+    section:"Section 10",
+    court:"Court of Appeal, England",
+    year:"1919",
+    facts:"Mr. Balfour promised to pay his wife £30 per month while she remained in England for medical reasons. Later the couple separated and Mr. Balfour ceased payment. Mrs. Balfour sued.",
+    held:"Domestic agreements between spouses lack the intention to create legal relations. The agreement was not a contract enforceable in law.",
+    ratio:"For an agreement to constitute a contract, there must be an intention to create legal relations. Agreements between husband and wife in domestic contexts are presumed not to be intended as legally binding.",
+    tags:["Intention","Legal Relations","Domestic Agreement","Social Agreement"]
+  },
+  {
+    name:"Hadley v. Baxendale",
+    cite:"(1854) 9 Ex 341",
+    section:"Section 73",
+    court:"Court of Exchequer, England",
+    year:"1854",
+    facts:"Hadley's mill shaft broke and needed to be sent to the manufacturer as a pattern for a new one. Baxendale (a carrier) delayed delivery causing the mill to remain idle for extra days, resulting in lost profits. Hadley sued for the lost profits.",
+    held:"Baxendale was not liable for lost profits. Such profits were not a natural consequence of the breach and were not in the reasonable contemplation of the parties at the time of contracting.",
+    ratio:"Damages for breach of contract should be such as may fairly and reasonably be considered either arising naturally (in the usual course of things) from the breach, or such as may reasonably be supposed to have been in the contemplation of both parties at the time they made the contract.",
+    tags:["Damages","Remoteness","Section 73","Natural Consequence","Contemplation"]
+  },
+  {
+    name:"Chinnaya v. Ramayya",
+    cite:"(1882) 4 Mad 137",
+    section:"Section 2(d)",
+    court:"Madras High Court",
+    year:"1882",
+    facts:"An old lady gifted her property to her daughter, who in turn agreed to pay an annuity to the plaintiff (the old lady's sister). On the daughter's failure to pay, the plaintiff sued.",
+    held:"The consideration need not pass from the promisee himself — it may be furnished by a third party. The plaintiff could sue even though she provided no consideration herself.",
+    ratio:"Under Section 2(d), consideration may be furnished by any person — the promisee or any other person. Stranger to consideration can maintain a suit, establishing 'consideration from a third party' as valid in India.",
+    tags:["Consideration","Third Party","Stranger","Section 2(d)","Privity"]
+  },
+  {
+    name:"K.N. Singh v. State of Haryana",
+    cite:"AIR 2000 SC 3311",
+    section:"Sections 14, 16",
+    court:"Supreme Court of India",
+    year:"2000",
+    facts:"A government employee was compelled to relinquish seniority rights under duress from his superior officers, under threat of adverse service consequences.",
+    held:"Consent obtained through coercion from superiors in a fiduciary or authority position is not free consent. The agreement was voidable at the employee's option under Sections 14 and 16.",
+    ratio:"Undue influence can arise from the exercise of authority (real or apparent) by one person over another. Consent so obtained is not 'free consent' under Section 14.",
+    tags:["Undue Influence","Free Consent","Authority","Section 16","Government Employee"]
+  },
+  {
+    name:"Shyam Sunder v. Ram Kumar",
+    cite:"AIR 2001 SC 2472",
+    section:"Section 56",
+    court:"Supreme Court of India",
+    year:"2001",
+    facts:"A contract was entered into for the sale of property. Subsequently, a statutory restriction was imposed making the transaction unlawful and impossible to complete.",
+    held:"Where performance of a contract becomes impossible after its formation due to an event which the promisor could not prevent, the contract is frustrated under Section 56 and becomes void.",
+    ratio:"The doctrine of frustration under Section 56 of the Indian Contract Act applies when subsequent events make performance impossible or unlawful through no fault of either party.",
+    tags:["Frustration","Impossibility","Section 56","Subsequent Event","Void"]
+  },
+  {
+    name:"M.C. Chacko v. State Bank of Travancore",
+    cite:"AIR 1970 SC 504",
+    section:"Sections 126–128",
+    court:"Supreme Court of India",
+    year:"1970",
+    facts:"A bank agreed to extend credit to a company on the guarantee of the company's directors. The director (Chacko) argued that variations in the loan terms discharged him from his guarantee obligations.",
+    held:"The surety's liability is co-extensive with that of the principal debtor but subject to the terms of the guarantee. Variance in terms of the contract between creditor and principal debtor without the surety's consent discharges the surety under Section 133.",
+    ratio:"A surety's liability is strictly construed. Any alteration in the terms of the original contract, without the surety's consent, automatically discharges the surety as to future transactions.",
+    tags:["Guarantee","Surety","Section 128","Section 133","Variance","Discharge"]
+  },
+  {
+    name:"Union of India v. Rampur Distillery",
+    cite:"AIR 1973 SC 1098",
+    section:"Section 74",
+    court:"Supreme Court of India",
+    year:"1973",
+    facts:"A contract for supply of goods contained a penalty clause for non-performance. On breach, the government sought to recover the full stipulated penalty amount.",
+    held:"Under Section 74, Indian courts do not draw a distinction between penalty and liquidated damages as English courts do. The party complaining of breach is entitled to reasonable compensation not exceeding the stipulated amount, regardless of whether actual damage is proved.",
+    ratio:"Section 74 is a departure from English law — it entitles the innocent party to reasonable compensation up to the stipulated amount, and proof of actual damage is not mandatory.",
+    tags:["Section 74","Penalty","Liquidated Damages","Reasonable Compensation","Breach"]
+  },
+  {
+    name:"Satyabrata Ghose v. Mugneeram Bangur",
+    cite:"AIR 1954 SC 44",
+    section:"Section 56",
+    court:"Supreme Court of India",
+    year:"1954",
+    facts:"A contract for the sale and development of land was frustrated by the requisition of the land by the government during WWII for military purposes. The defendant claimed frustration.",
+    held:"The doctrine of frustration in India is codified in Section 56 of the Indian Contract Act. The word 'impossible' in Section 56 does not mean literal impossibility — it includes cases where performance is impracticable by reason of some supervening event.",
+    ratio:"The Indian doctrine of frustration, under Section 56, is wider than mere literal impossibility. If the performance is so radically different from what was promised that it would be unjust to hold the parties bound, the contract is frustrated.",
+    tags:["Section 56","Frustration","Impossibility","Supervening Event","WWII"]
+  },
+  {
+    name:"B.P. Achala Anand v. S. Appi Reddy",
+    cite:"AIR 2005 SC 731",
+    section:"Sections 10, 25",
+    court:"Supreme Court of India",
+    year:"2005",
+    facts:"A suit was filed to enforce an agreement to maintain a separated wife. The question arose whether the agreement, being made between spouses without fresh consideration, was enforceable.",
+    held:"An agreement made on account of natural love and affection between persons standing in near relation to each other, if expressed in writing and registered, is enforceable under Section 25(1) without consideration.",
+    ratio:"Section 25(1) creates a valid exception to the rule that agreements without consideration are void. Natural love and affection between near relatives, when in writing and registered, suffices.",
+    tags:["Section 25","Natural Love","Consideration","Writing","Registration","Spouse"]
+  },
+  {
+    name:"State of Maharashtra v. M.N. Kaul",
+    cite:"AIR 1967 SC 1634",
+    section:"Section 70",
+    court:"Supreme Court of India",
+    year:"1967",
+    facts:"Services were rendered by the plaintiff to the government which accepted and enjoyed the benefit, though no formal contract existed.",
+    held:"Under Section 70, when a person lawfully does something for another who enjoys the benefit, compensation must be made. It applies even to government contracts where there is no formal agreement.",
+    ratio:"Section 70 embodies the principle of unjust enrichment — even without a formal contract, if a person enjoys the benefit of another's non-gratuitous act, he is bound to compensate.",
+    tags:["Section 70","Quasi-Contract","Unjust Enrichment","Government","Benefit"]
+  },
+  {
+    name:"Durga Prasad v. Baldeo",
+    cite:"(1880) 3 All 221",
+    section:"Section 2(d) — Consideration",
+    court:"Allahabad High Court",
+    year:"1880",
+    facts:"At the request of the Collector, Durga Prasad built some shops in a market. The occupants of the shops then promised to pay him commission on articles sold. They later refused to pay.",
+    held:"The promise to pay commission was not enforceable. The consideration for the promise (building the shops) moved not at the desire of the promisors (shop occupants) but at the desire of the Collector.",
+    ratio:"Consideration must move at the desire of the promisor (Section 2(d)). Acts done at the request of a third party are not consideration for a subsequent promise by different persons.",
+    tags:["Consideration","Section 2(d)","At the Desire","Third Party Request","Past Consideration"]
+  },
+  {
+    name:"Kedar Nath Bhattacharji v. Gorie Mohammed",
+    cite:"(1887) 14 Cal 64",
+    section:"Sections 2, 25",
+    court:"Calcutta High Court",
+    year:"1887",
+    facts:"The plaintiff promised to subscribe to the construction of a town hall. When the plaintiff sued on the subscription promise, the defendant argued there was no consideration.",
+    held:"The construction of the hall was commenced upon the faith of the subscription promises. The consideration for the promise was the promise given by others and the action taken on that basis.",
+    ratio:"Where a promise has been made and the promisee has acted upon it to his detriment, the promisor cannot deny consideration. This anticipates the doctrine of promissory estoppel.",
+    tags:["Consideration","Subscription","Promissory Estoppel","Detriment","Reliance"]
+  },
+];
+
+// ── GLOSSARY DATA ──
+const GLOSSARY = [
+  { term:"Proposal", section:"Section 2(a)", def:"When one person signifies to another his willingness to do or abstain from doing anything, with a view to obtaining the assent of that other, he is said to make a proposal." },
+  { term:"Acceptance", section:"Section 2(b)", def:"When the person to whom the proposal is made signifies his assent thereto. A proposal, when accepted, becomes a promise." },
+  { term:"Promisor / Promisee", section:"Section 2(c)", def:"The person making the proposal is the promisor. The person accepting the proposal is the promisee." },
+  { term:"Consideration", section:"Section 2(d)", def:"When, at the desire of the promisor, the promisee or any other person has done, abstained, or promises to do or abstain from doing something — such act or abstinence or promise is consideration for the promise." },
+  { term:"Agreement", section:"Section 2(e)", def:"Every promise and every set of promises, forming the consideration for each other, is an agreement." },
+  { term:"Reciprocal Promises", section:"Section 2(f)", def:"Promises which form the consideration or part of the consideration for each other." },
+  { term:"Void Agreement", section:"Section 2(g)", def:"An agreement not enforceable by law is said to be void." },
+  { term:"Contract", section:"Section 2(h)", def:"An agreement enforceable by law is a contract." },
+  { term:"Voidable Contract", section:"Section 2(i)", def:"An agreement which is enforceable by law at the option of one or more of the parties thereto, but not at the option of the other or others." },
+  { term:"Free Consent", section:"Section 14", def:"Consent is free when it is not caused by coercion, undue influence, fraud, misrepresentation, or mistake." },
+  { term:"Coercion", section:"Section 15", def:"Committing, or threatening to commit, any act forbidden by the IPC, or unlawfully detaining (or threatening to detain) property, to cause another to enter an agreement." },
+  { term:"Undue Influence", section:"Section 16", def:"Where relations between parties are such that one can dominate the will of another and uses that position to obtain an unfair advantage." },
+  { term:"Fraud", section:"Section 17", def:"Includes suggestion of falsehood, active concealment of known facts, promise without intent to perform, any act fitted to deceive, or any act the law declares fraudulent." },
+  { term:"Misrepresentation", section:"Section 18", def:"Includes positive assertion not warranted by information, breach of duty causing misleading, or innocently causing a party to mistake the substance of the subject matter." },
+  { term:"Contingent Contract", section:"Section 31", def:"A contract to do or not to do something, if some event collateral to the contract does or does not happen." },
+  { term:"Indemnity", section:"Section 124", def:"A contract by which one party promises to save the other from loss caused by the conduct of the promisor himself or by the conduct of any other person." },
+  { term:"Guarantee", section:"Section 126", def:"A contract to perform the promise or discharge the liability of a third person in case of his default." },
+  { term:"Surety", section:"Section 126", def:"The person who gives the guarantee." },
+  { term:"Principal Debtor", section:"Section 126", def:"The person in respect of whose default the guarantee is given." },
+  { term:"Continuing Guarantee", section:"Section 129", def:"A guarantee which extends to a series of transactions." },
+  { term:"Bailment", section:"Section 148", def:"The delivery of goods by one person to another for some purpose, upon a contract that they shall, when the purpose is accomplished, be returned or disposed of according to the bailor's directions." },
+  { term:"Bailor", section:"Section 148", def:"The person delivering the goods in a bailment." },
+  { term:"Bailee", section:"Section 148", def:"The person to whom goods are delivered in a bailment." },
+  { term:"Pledge", section:"Section 172", def:"The bailment of goods as security for payment of a debt or performance of a promise." },
+  { term:"Pawnor / Pawnee", section:"Section 172", def:"The bailor in a pledge is the pawnor; the bailee is the pawnee." },
+  { term:"Agent", section:"Section 182", def:"A person employed to do any act for another, or to represent another in dealings with third persons." },
+  { term:"Principal", section:"Section 182", def:"The person for whom an agent acts, or who is represented by an agent." },
+  { term:"Sub-Agent", section:"Section 191", def:"A person employed by, and acting under the control of, the original agent in the business of the agency." },
+  { term:"Novation", section:"Section 62", def:"The substitution of a new contract in place of the old one, thereby extinguishing the original contract." },
+  { term:"Frustration", section:"Section 56", def:"A contract to do an act which, after the contract is made, becomes impossible or unlawful, becomes void when the act becomes impossible or unlawful." },
+];
+
+// ── HISTORY DATA ──
+const HISTORY = [
+  { year:"1866", title:"Report of Her Majesty's Commissioners", desc:"The bill was based on a report of Her Majesty's Commissioners appointed to prepare a body of substantive law for India, dated 6th July, 1866. Published in the Gazette of India, 1867 Extraordinary." },
+  { year:"1872", title:"Indian Contract Act Enacted", desc:"Act No. 9 of 1872, assented to on 25th April 1872. It came into force on 1st September 1872, becoming the foundational statute for contract law in India, codifying vast bodies of common law and equity." },
+  { year:"1872", title:"Select Committee Report", desc:"Report of the Select Committee published in the Gazette of India, Extraordinary, dated 28th March 1872, leading to final legislative form of the Act." },
+  { year:"1877", title:"First Amendment — Arbitration Clauses", desc:"The second clause of Exception 1 to Section 28 repealed by Act 1 of 1877, clarifying savings for arbitration references." },
+  { year:"1891", title:"Amendment — Joint Promisors", desc:"Act 12 of 1891 substituted 'one or more' for 'one' in Section 43, allowing the promisee to compel any one or more (not just one) of multiple joint promisors to perform." },
+  { year:"1899", title:"Amendment — Sections 16, 19A, 74", desc:"Act 6 of 1899 substituted the current Section 16 on undue influence, inserted Section 19A on power to set aside contracts induced by undue influence, and revised Section 74 on penalty clauses." },
+  { year:"1914", title:"Repealing and Amending Act", desc:"Act 10 of 1914 repealed the Schedule of enactments and made minor textual amendments." },
+  { year:"1930", title:"Indian Sale of Goods Act", desc:"The Indian Sale of Goods Act, 1930 (Act 3 of 1930) repealed Chapter VII (Sections 76–123) relating to sale of goods. These provisions were replaced by the dedicated Sale of Goods Act." },
+  { year:"1932", title:"Indian Partnership Act", desc:"Chapter XI (Sections 239–266) on Partnership was repealed by the Indian Partnership Act, 1932 (Act 9 of 1932), which became the separate governing statute for partnerships." },
+  { year:"1938", title:"Extension to CP and Berar", desc:"The Act was extended to CP and Berar by CP and Berar Act 15 of 1938, expanding its territorial application." },
+  { year:"1951", title:"Post-Independence Amendment", desc:"Act 3 of 1951 substituted references to 'Part A States and Part C States' with 'India' in Section 10, following India's constitutional reorganisation." },
+  { year:"1997", title:"Amendment — Section 28", desc:"Act 1 of 1997 substituted new wording in Section 28, clarifying the scope of agreements in restraint of legal proceedings and codifying both types of void restriction clauses (ss.28(a) and 28(b))." },
+  { year:"2013", title:"Banking Guarantee — Exception 3", desc:"Act 4 of 2013 inserted Exception 3 to Section 28, permitting banks and financial institutions to stipulate guarantee agreements with extinguishment clauses, provided the period is not less than one year from the date of the specified event." },
+  { year:"2019", title:"Jammu & Kashmir Integration", desc:"Act 34 of 2019 omitted the words 'except the State of Jammu and Kashmir' from Section 1, extending the Indian Contract Act to the entire territory of India following the reorganisation of Jammu & Kashmir." },
+];
+
+// ══════════════════════════════════════════════
+// RENDERING
+// ══════════════════════════════════════════════
+
+function escHtml(str){ return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function buildSections(query=''){
+  const q = query.toLowerCase().trim();
+  const container = document.getElementById('panel-sections');
+  let html = '';
+  let total = 0;
+
+  CHAPTERS.forEach(ch => {
+    const matched = ch.sections.filter(s =>
+      !q ||
+      s.num.toLowerCase().includes(q) ||
+      s.title.toLowerCase().includes(q) ||
+      s.text.toLowerCase().replace(/<[^>]+>/g,'').includes(q) ||
+      s.tags.some(t=>t.toLowerCase().includes(q)) ||
+      s.illustrations.some(i=>i.toLowerCase().includes(q))
+    );
+    if(!matched.length) return;
+    total += matched.length;
+
+    html += `<div class="chapter-header">
+      <span class="chapter-num">${ch.num}</span>
+      <span class="chapter-title">${ch.title}</span>
+    </div>`;
+
+    matched.forEach(s => {
+      const textHl = q ? s.text.replace(new RegExp(q,'gi'), m=>`<mark class="mark">${m}</mark>`) : s.text;
+      const titleHl = q ? s.title.replace(new RegExp(q,'gi'), m=>`<mark class="mark">${m}</mark>`) : s.title;
+
+      html += `<div class="section-card" id="${s.id}">
+        <div class="section-head" onclick="toggleCard(this)">
+          <span class="sec-badge">§${s.num}</span>
+          <span class="sec-title">${titleHl}</span>
+          <span class="sec-toggle">▾</span>
+        </div>
+        <div class="section-body">
+          <p class="section-text">${textHl}</p>`;
+
+      if(s.illustrations.length){
+        html += `<div class="illustration-block"><div class="illustration-label">Illustrations</div>`;
+        s.illustrations.forEach((ill,i)=>{
+          const illHl = q ? ill.replace(new RegExp(q,'gi'), m=>`<mark class="mark">${m}</mark>`) : ill;
+          html += `<p class="illustration-text">${String.fromCharCode(97+i)}) ${illHl}</p>`;
+        });
+        html += `</div>`;
+      }
+
+      html += `<div class="tags">${s.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        </div>
+      </div>`;
+    });
+  });
+
+  if(!html) html = `<div class="no-results">No sections found for "<em>${escHtml(q)}</em>"</div>`;
+  container.innerHTML = html;
+  return total;
+}
+
+function buildCases(query=''){
+  const q = query.toLowerCase().trim();
+  const container = document.getElementById('cases-container');
+  const filtered = !q ? CASES : CASES.filter(c=>
+    c.name.toLowerCase().includes(q) ||
+    c.section.toLowerCase().includes(q) ||
+    c.facts.toLowerCase().includes(q) ||
+    c.held.toLowerCase().includes(q) ||
+    c.ratio.toLowerCase().includes(q) ||
+    c.tags.some(t=>t.toLowerCase().includes(q))
+  );
+
+  if(!filtered.length){ container.innerHTML=`<div class="no-results">No cases found for "<em>${escHtml(q)}</em>"</div>`; return 0; }
+
+  container.innerHTML = filtered.map(c => {
+    const hl = t => q ? t.replace(new RegExp(q,'gi'), m=>`<mark class="mark">${m}</mark>`) : t;
+    return `<div class="case-card">
+      <div class="case-head" onclick="toggleCard(this)">
+        <div>
+          <div class="case-name">${hl(c.name)}</div>
+          <div class="case-cite">${c.cite} · ${c.court} · ${c.year}</div>
+        </div>
+        <span class="case-tag">${hl(c.section)}</span>
+      </div>
+      <div class="case-body">
+        <div class="case-section"><div class="case-section-label">Facts</div><div class="case-section-text">${hl(c.facts)}</div></div>
+        <div class="case-section"><div class="case-section-label">Held</div><div class="case-section-text">${hl(c.held)}</div></div>
+        <div class="case-section"><div class="case-section-label">Ratio Decidendi</div><div class="ratio-box">${hl(c.ratio)}</div></div>
+        <div class="tags">${c.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>`;
+  }).join('');
+  return filtered.length;
+}
+
+function buildGlossary(query=''){
+  const q = query.toLowerCase().trim();
+  const container = document.getElementById('glossary-container');
+  const filtered = !q ? GLOSSARY : GLOSSARY.filter(g=>
+    g.term.toLowerCase().includes(q) ||
+    g.def.toLowerCase().includes(q) ||
+    g.section.toLowerCase().includes(q)
+  );
+  if(!filtered.length){ container.innerHTML=`<div class="no-results" style="grid-column:1/-1">No terms found for "<em>${escHtml(q)}</em>"</div>`; return 0; }
+  const hl = t => q ? t.replace(new RegExp(q,'gi'), m=>`<mark class="mark">${m}</mark>`) : t;
+  container.innerHTML = filtered.map(g=>`
+    <div class="gloss-card">
+      <div class="gloss-term">${hl(g.term)}</div>
+      <div class="gloss-section">${hl(g.section)}</div>
+      <div class="gloss-def">${hl(g.def)}</div>
+    </div>`).join('');
+  return filtered.length;
+}
+
+function buildHistory(){
+  document.getElementById('history-container').innerHTML = HISTORY.map(h=>`
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">${h.year}</div>
+      <div class="tl-title">${h.title}</div>
+      <div class="tl-desc">${h.desc}</div>
+    </div>`).join('');
+}
+
+function buildSidebar(){
+  const nav = document.getElementById('sidebar-nav');
+  let html = `<span class="nav-section">Navigation</span>
+    <a class="nav-item" onclick="showTab('sections',null);scrollTo(0,0)"><span class="sec-num">§§</span> All Sections</a>
+    <a class="nav-item" onclick="showTab('cases',null);scrollTo(0,0)">⚖ Cases</a>
+    <a class="nav-item" onclick="showTab('glossary',null);scrollTo(0,0)">📖 Glossary</a>
+    <a class="nav-item" onclick="showTab('history',null);scrollTo(0,0)">🕰 History</a>
+    <span class="nav-section">Chapters</span>`;
+  CHAPTERS.forEach(ch=>{
+    html += `<a class="nav-item" onclick="showTab('sections',null);setTimeout(()=>scrollToChapter('${ch.id}'),100)">${ch.title}</a>`;
+    ch.sections.forEach(s=>{
+      html += `<a class="nav-item sec-link" data-title="${s.title.toLowerCase()}" data-num="${s.num}" onclick="showTab('sections',null);setTimeout(()=>scrollToSection('${s.id}'),100)"><span class="sec-num">§${s.num}</span>${s.title}</a>`;
+    });
+  });
+  nav.innerHTML = html;
+}
+
+function scrollToSection(id){
+  const el = document.getElementById(id);
+  if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); el.classList.add('open'); }
+}
+
+function scrollToChapter(id){
+  const el = document.querySelector(`[id="${id}"]`) || document.querySelector('.chapter-header');
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+function sidebarFilter(q){
+  q = q.toLowerCase();
+  document.querySelectorAll('.sec-link').forEach(el=>{
+    el.style.display = (!q || el.dataset.title.includes(q) || el.dataset.num.includes(q)) ? '' : 'none';
+  });
+}
+
+function toggleCard(head){
+  head.parentElement.classList.toggle('open');
+}
+
+let currentTab = 'sections';
+
+function showTab(id, btn){
+  currentTab = id;
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else {
+    document.querySelectorAll('.tab-btn').forEach(b=>{
+      if(b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
+    });
+  }
+  document.getElementById('main-search').value='';
+  document.getElementById('search-results-count').textContent='';
+}
+
+function mainSearch(q){
+  let count = 0;
+  if(currentTab==='sections') count = buildSections(q);
+  else if(currentTab==='cases') count = buildCases(q);
+  else if(currentTab==='glossary') count = buildGlossary(q);
+  if(q.trim()) document.getElementById('search-results-count').textContent = count + ' result' + (count===1?'':'s') + ' found';
+  else document.getElementById('search-results-count').textContent = '';
+}
+
+// ── INIT ──
+buildSidebar();
+buildSections();
+buildCases();
+buildGlossary();
+buildHistory();
+</script>
+</body>
+</html>
